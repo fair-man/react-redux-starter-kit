@@ -1,3 +1,6 @@
 .idea
-.none_modules
 .workspace
+
+./none_modules
+./package-lock.json
+./dist
