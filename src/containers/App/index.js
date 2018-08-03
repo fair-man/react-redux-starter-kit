@@ -13,9 +13,10 @@ class App extends Component {
     this.props.appActions.changeName(this.props.app.newUserName);
   }
   render() {
+    const {user, message, newUserName} = this.props.app;
     return <div className="margin-16">
       <div className="margin-8">
-        {this.props.app.message} <b>{this.props.app.user}</b>
+        {message} <b>{user}</b>
       </div>
       <div className="margin-8">
         <span>
@@ -24,7 +25,7 @@ class App extends Component {
         <span>
           <input type="text"
                  onChange={::this.typedName}
-                 defaultValue={this.props.app.newUserName}
+                 defaultValue={newUserName}
           />
         </span>
         <span>
