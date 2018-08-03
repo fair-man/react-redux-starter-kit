@@ -1,41 +1,11 @@
-import React, { Component, PropTypes } from 'react';
-import { bindActionCreators } from 'redux';
-import { connect } from 'react-redux';
+import React, { Component } from 'react'
 
-import * as appActions from '../../actions/App';
-
-import UserShow from '../../components/UserShow';
-import UserShowEdit from '../../components/UserShowEdit';
-
-import ('./assets/app.scss');
-
-class App extends Component {
-  typedName(e) {
-    this.props.appActions.typedName(e.currentTarget.value);
-  }
-  changeName() {
-    this.props.appActions.changeName(this.props.app.newUserName);
-  }
+export default class App extends Component {
   render() {
-    const {user, message, newUserName} = this.props.app;
-
-    return <div className="margin-16">
-      <UserShow user={user} message={message}/>
-      <UserShowEdit newUserName={newUserName} typedName={::this.typedName} changeName={::this.changeName}/>
-    </div>
+    return (
+      <div>
+        {this.props.children}
+      </div>
+    )
   }
 }
-
-function mapStateToProps (state) {
-  return {
-    app: state.app
-  }
-}
-
-function mapDispatchToProps(dispatch) {
-  return {
-    appActions: bindActionCreators(appActions, dispatch)
-  }
-}
-
-export default connect(mapStateToProps, mapDispatchToProps)(App)

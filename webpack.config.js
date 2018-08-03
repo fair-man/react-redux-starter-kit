@@ -18,7 +18,10 @@ let cleanOptions = {
 };
 
 const config = {
-  entry: './src/main',
+  entry: [
+    'babel-polyfill',
+    './src/main'
+  ],
   output: {
     path: path.join(__dirname, 'dist'),
     filename: '[name].[hash].js'
@@ -26,7 +29,7 @@ const config = {
   module: {
     rules: [
       {
-        loaders: ['babel-loader'],
+        use: ['babel-loader'],
         include: [
           path.resolve(__dirname, "src"),
         ],
@@ -68,7 +71,6 @@ module.exports = (env, argv) => {
   if (MODE === 'production') {
     config.optimization = {
       minimizer: [
-        // we specify a custom UglifyJsPlugin here to get source maps in production
         new UglifyJsPlugin({
           cache: true,
           parallel: true,
