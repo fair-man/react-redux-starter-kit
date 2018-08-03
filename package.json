@@ -18,11 +18,15 @@
   "homepage": "https://github.com/fair-man/react-redux-starter-kit#readme",
   "dependencies": {
     "babel-polyfill": "^6.26.0",
+    "flex-box-grid-css": "^1.0.1",
+    "flexbox-grid-css": "^1.0.0",
     "normalize.css": "^8.0.0",
     "react": "^16.4.1",
     "react-dom": "^16.4.1",
     "react-redux": "^5.0.7",
-    "redux": "^4.0.0"
+    "redux": "^4.0.0",
+    "redux-devtools-extension": "^2.13.5",
+    "redux-thunk": "^2.3.0"
   },
   "devDependencies": {
     "babel-core": "^6.26.3",

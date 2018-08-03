@@ -1,0 +1,9 @@
+@each $num in (0, 4, 8, 16, 24, 32) {
+  .margin-#{$num} {
+    margin: $num * 1px;
+  }
+
+  .padding-#{$num} {
+    margin: $num  * 1px;
+  }
+}
