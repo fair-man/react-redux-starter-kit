@@ -19,7 +19,6 @@
   "dependencies": {
     "babel-polyfill": "^6.26.0",
     "flex-box-grid-css": "^1.0.1",
-    "flexbox-grid-css": "^1.0.0",
     "normalize.css": "^8.0.0",
     "react": "^16.4.1",
     "react-dom": "^16.4.1",
