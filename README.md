@@ -2,10 +2,10 @@
 
 #### Includes:
 * React
-* Redux,
-* React Router,
-* Webpack 4,
-* Dev server
+* Redux
+* React Router
+* Webpack 4
+* Development server
 * Redux DevTools
 
 #### Requirements
