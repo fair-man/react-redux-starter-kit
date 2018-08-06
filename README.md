@@ -6,15 +6,19 @@
 * React Router,
 * Webpack 4,
 * Dev server
+* Redux DevTools
 
-#### For use.
-1. Perform cloning
+#### Requirements
+* node ^5.0.0
+* npm ^3.0.0
+
+#### Installation
 
 ```sh
  $ git clone https://github.com/fair-man/react-redux-starter-kit.git && cd react-redux-starter-kit
 ```
 
-2. Run commands:
+#### Running the Project
 ```sh
 $ npm run fe: up - install all the dependencies and run the webpack in the watch mode, and also the development server.
 ```
