@@ -20,7 +20,7 @@
 
 #### Running the Project
 ```sh
-$ npm run fe: up - install all the dependencies and run the webpack in the watch mode, and also the development server.
+$ npm run fe:up - install all the dependencies and run the webpack in the watch mode, and also the development server.
 ```
 
 ```sh
