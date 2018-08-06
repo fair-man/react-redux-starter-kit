@@ -4,7 +4,7 @@
 * React
 * Redux,
 * React Router,
-* Webpack,
+* Webpack 4,
 * Dev server
 
 #### For use.
