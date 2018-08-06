@@ -2,7 +2,7 @@ import React, { Component, PropTypes } from 'react';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 
-import * as appActions from '../../actions/Home';
+import * as appActions from './home.actions';
 
 import UserShow from '../../components/UserShow';
 import UserShowEdit from '../../components/UserShowEdit';

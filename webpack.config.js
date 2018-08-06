@@ -3,8 +3,8 @@ let webpack = require('webpack');
 
 const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
+const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 
 let pathsToClean = [
   'dist'
@@ -18,13 +18,13 @@ let cleanOptions = {
 };
 
 const config = {
-  entry: [
-    'babel-polyfill',
-    './src/main'
-  ],
+  entry: {
+    main: './src/main'
+  },
   output: {
     path: path.join(__dirname, 'dist'),
-    filename: '[name].[hash].js'
+    filename: '[name].[hash].js',
+    library: '[name]'
   },
   module: {
     rules: [
@@ -34,13 +34,6 @@ const config = {
           path.resolve(__dirname, "src"),
         ],
         test: /\.js$/
-      },
-      {
-        test: /\.scss$/,
-        use: ExtractTextPlugin.extract({
-          fallback: 'style-loader',
-          use: ['css-loader', 'sass-loader']
-        })
       }
     ]
   }
@@ -62,11 +55,20 @@ module.exports = (env, argv) => {
     new HtmlWebpackPlugin({
       template: path.join(__dirname, '/src/index.html')
     }),
-    new ExtractTextPlugin({
-      filename: '[name].[hash].css',
-      allChunks: false
+    new MiniCssExtractPlugin({
+      filename: MODE === 'development' ? '[name].css' : '[name].[hash].css',
+      chunkFilename: MODE === 'development' ? '[id].css' : '[id].[hash].css',
     })
   ];
+
+  config.module.rules.push({
+    test: /\.(sa|sc|c)ss$/,
+    use: [
+      MODE === 'development' ? 'style-loader' : MiniCssExtractPlugin.loader,
+      'css-loader',
+      'sass-loader',
+    ],
+  });
 
   if (MODE === 'production') {
     config.optimization = {

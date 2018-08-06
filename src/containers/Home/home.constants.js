@@ -1,0 +1,4 @@
+const TYPED_NAME = 'TYPED_NAME';
+const CHANGE_NAME = 'CHANGE_NAME';
+
+export {TYPED_NAME, CHANGE_NAME};

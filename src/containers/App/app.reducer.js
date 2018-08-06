@@ -1,4 +1,4 @@
-import {TYPED_NAME, CHANGE_NAME} from '../constants';
+import {TYPED_NAME, CHANGE_NAME} from './app.constants';
 
 const initialState = {
   user: 'unknown user',
